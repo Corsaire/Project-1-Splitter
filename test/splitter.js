@@ -1,5 +1,4 @@
 var Splitter = artifacts.require("./Splitter.sol");
-var BigNumber = require('bignumber');
 
 contract('Splitter', function(accounts) {
   it("should split Ether between Bob and Carol", function() {
