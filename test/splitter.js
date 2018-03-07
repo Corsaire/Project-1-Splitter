@@ -11,7 +11,9 @@ contract('Splitter', function(accounts) {
       Splitter.new({from:accounts[0]}).then(_instance => instance = _instance)
   );
 
-  var sendEtherFunction = function() {
+  var sendEtherFunction; 
+
+  it("Alice(accounts[0]) should send Ether to contract for Bob(accounts[1]) and Carol(accounts[2])", sendEtherFunction = function() {
   
     var value_to_add = 10000000;
     var initBalances;
@@ -40,8 +42,7 @@ contract('Splitter', function(accounts) {
           assert.equal(balances[1], value_to_add / 2, "Bob balance failed");
           assert.equal(balances[2], value_to_add - value_to_add / 2, "Carol balance failed");
        });
-      }
-  it("Alice(accounts[0]) should send Ether to contract for Bob(accounts[1]) and Carol(accounts[2])", sendEtherFunction);
+      });
 
   it("Bob(accounts[1]) should withdraw part of the funds", withdrawEtherFunction = function() {
   
